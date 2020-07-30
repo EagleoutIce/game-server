@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>The game-server</title>
+</head>
+
+<body>
+    This is the server, used by <em>Team 020</em>. To provide a consistent documentation of all features, this
+    documentation includes the <em>game-data</em> javadocs so you can jump between all features offered when using the
+    server.<br>
+    The server can be tested via the stories consult the corresponding classes for more information.<br>
+
+    <h1>1. Running the game-server</h1>
+
+    You can run the jar built by the maven-scripts directly (see in the <em>target</em>-folder) or you can use the
+    build-scripts (<em>build-docker.sh</em>) to construct a docker-container from the fresh build which can then be used
+    and started via the wrapper <em>server020</em> (you might need to write another wrapper for windows and
+    non-supported systems). If you want to know all the options call the server with the <em>--help</em> option. It is
+    supported and you will (hopefully) get the output similar to this one:
+    <pre>
+usage: server020 [-c &lt;FILE&gt;] [--defaults] [-f &lt;seconds&gt;] [-h] [-m &lt;FILE&gt;] [-p &lt;PORT&gt;] [-s &lt;FILE&gt;] [--server-config &lt;FILE&gt;] [--strict] [-v &lt;0-5&gt;] [-V] [--x &lt;key&gt; &lt;value&gt;]
+The following Arguments are available:
+
+ -c,--config-charset &lt;FILE&gt;           Sets the path to the character-configuration
+    --defaults                        Automatically sets (internal) defaults for all Configurations.
+ -f,--freshness-threshold &lt;seconds&gt;   Sets the freshness-threshold in seconds (default is disabled). Negative values mean disabled.
+ -h,--help                            Prints this help
+ -m,--config-match &lt;FILE&gt;             Sets the path to the Match-configuration
+ -p,--port &lt;PORT&gt;                     Sets the internal port-number the server is operating on. Will default to 7007. Port should be between 1024 and 65535.
+ -s,--config-scenario &lt;FILE&gt;          Sets the path to the scenario-configuration
+    --server-config &lt;FILE&gt;            Pass another serverConfiguration to be used.
+    --strict                          Let all rules by the standard throw an error instead of a warning.
+ -v,--verbosity &lt;0-5&gt;                 Sets the verbosity of the created logfiles has to be between 0 and 5.
+ -V,--version                         Prints the version-information.
+    --x &lt;key&gt; &lt;value&gt;                 Additional Key-Value-Pairs
+
+Running 'game-data' v.1.2
+Server will only start if not supplied with '-h/--help'.
+</pre>
+
+    If you want to change the defaults loaded by <em>--defaults</em> consult the files in <em>resources/defaults</em>.
+
+    <h1>2. Include the server in other modules</h1>
+
+    To use <code>game-server</code> in your project, add the following lines to your <code>pom.xml</code>:
+    <pre><code class="has-line-data"><span class="hljs-tag">&lt;<span style="color:rgb(184, 9, 91)">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span style="color:rgb(184, 9, 91)">groupId</span>&gt;</span>de.uulm.team020<span class="hljs-tag">&lt;/<span style="color:rgb(184, 9, 91)">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span style="color:rgb(184, 9, 91)">artifactId</span>&gt;</span>game-server<span class="hljs-tag">&lt;/<span style="color:rgb(184, 9, 91)">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span style="color:rgb(184, 9, 91)">version</span>&gt;</span>1.0<span class="hljs-tag">&lt;/<span style="color:rgb(184, 9, 91)">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span style="color:rgb(184, 9, 91)">dependency</span>&gt;</span>
+</code>
+</pre>
+    As you probably want the server only while testing, the following snippet is recommended (of course this applies to
+    other build systems as well):
+    <pre><code class="has-line-data"><span class="hljs-tag">&lt;<span style="color:rgb(184, 9, 91)">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span style="color:rgb(184, 9, 91)">groupId</span>&gt;</span>de.uulm.team020<span class="hljs-tag">&lt;/<span style="color:rgb(184, 9, 91)">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span style="color:rgb(184, 9, 91)">artifactId</span>&gt;</span>game-server<span class="hljs-tag">&lt;/<span style="color:rgb(184, 9, 91)">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span style="color:rgb(184, 9, 91)">version</span>&gt;</span>1.0<span class="hljs-tag">&lt;/<span style="color:rgb(184, 9, 91)">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span style="color:rgb(184, 9, 91)">scope</span>&gt;</span>test<span
+                class="hljs-tag">&lt;/<span style="color:rgb(184, 9, 91)">scope</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span style="color:rgb(184, 9, 91)">dependency</span>&gt;</span>
+</code>
+</pre>
+
+    <h1>3. About game-data</h1>
+    To use <code>game-data</code> in your project, add the following lines to your <code>pom.xml</code>:
+    <pre><code class="has-line-data"><span class="hljs-tag">&lt;<span style="color:rgb(184, 9, 91)">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span style="color:rgb(184, 9, 91)">groupId</span>&gt;</span>de.uulm.team020<span class="hljs-tag">&lt;/<span style="color:rgb(184, 9, 91)">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span style="color:rgb(184, 9, 91)">artifactId</span>&gt;</span>game-data<span class="hljs-tag">&lt;/<span style="color:rgb(184, 9, 91)">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span style="color:rgb(184, 9, 91)">version</span>&gt;</span>1.1<span class="hljs-tag">&lt;/<span style="color:rgb(184, 9, 91)">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span style="color:rgb(184, 9, 91)">dependency</span>&gt;</span>
+</code>
+</pre>
+    <p class="has-line-data">If you use a modern ide, this javadoc will be shipped with this package or is available by
+        adding:</p>
+    <pre><code class="has-line-data"><span class="hljs-tag">&lt;<span style="color:rgb(184, 9, 91)">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span style="color:rgb(184, 9, 91)">groupId</span>&gt;</span>de.uulm.team020<span class="hljs-tag">&lt;/<span style="color:rgb(184, 9, 91)">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span style="color:rgb(184, 9, 91)">artifactId</span>&gt;</span>game-data<span class="hljs-tag">&lt;/<span style="color:rgb(184, 9, 91)">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span style="color:rgb(184, 9, 91)">version</span>&gt;</span>1.1<span class="hljs-tag">&lt;/<span style="color:rgb(184, 9, 91)">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span style="color:rgb(184, 9, 91)">classifier</span>&gt;</span>javadoc<span class="hljs-tag">&lt;/<span style="color:rgb(184, 9, 91)">classifier</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span style="color:rgb(184, 9, 91)">dependency</span>&gt;</span>
+</code></pre>
+    <p class="has-line-data">Please note, that you will have to build <code>game-data</code> once via
+        <code>mvn clean install</code> to make it available to other projects – <code>game-data</code> won’t be
+        available
+        via the maven repositories.</p>
+
+    <h1>4. Logging</h1>
+    Logging is done via the <em>Magpie</em>-class, which was written for <em>game-data</em>. By default it will create a
+    <em>Magpie</em>-Folder in the temp-directory of your system or the container. This enables you to retrieve the
+    log-files. You may alter this path to any folder (even outside the container) by modifying the
+    <em>magpie</em>-Configuration and setting the mounting-path for the container accordingly (by default it will mount
+    the current directory if you use the wrapper scripts).
+
+    <h1>5. StoryAuthor</h1>
+    The StoryAuthor (consult the story-guide for more information or read the api-docs) works similar to
+    <em>Magpie</em> but will create a folder named <em>Stories</em> in the temp-directory by default. You can change
+    this behaviour as well and at will.
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+# This story preset will perform the complete initialisation including 
+# the drafting phase. It won't add any spectators.
+ASSURE_DEFAULT p1 saphira
+ASSURE_DEFAULT p2 dieter
+# Greet the players:
+HELLO ${p1} PLAYER
+HELLO ${p2} PLAYER
+# Perform their selections:
+ITER 8:
+  ITEM ${playerOneName} random
+  ITEM ${playerTwoName} random
+RETI
+
+EQUIP ${playerOneName} random
+EQUIP ${playerTwoName} random

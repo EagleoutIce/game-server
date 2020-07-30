@@ -1,0 +1,3 @@
+# This story preset will perform a full game, with retirements only
+PRESET complete-drafting
+PRESET skip-main

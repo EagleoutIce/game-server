@@ -1,0 +1,32 @@
+# This story preset will perform the complete initialisation including 
+# the drafting phase. It won't add any spectators.
+ASSURE_DEFAULT p1 saphira
+ASSURE_DEFAULT p2 dieter
+# Greet the players:
+HELLO ${p1} PLAYER
+HELLO ${p2} PLAYER
+# Perform their selections:
+
+# Item Phase:
+ASSURE_DEFAULT #charsP1 2
+ASSURE_DEFAULT #charsP2 2
+
+SUB 8 ${#charsP1} #gadgetP1
+SUB 8 ${#charsP2} #gadgetP2
+
+ITER ${#charsP1}:
+  ITEM ${playerOneName} random-character
+RETI
+ITER ${#charsP2}:
+  ITEM ${playerTwoName} random-character
+RETI
+
+ITER ${#gadgetP1}:
+  ITEM ${playerOneName} random-gadget
+RETI
+ITER ${#gadgetP2}:
+  ITEM ${playerTwoName} random-gadget
+RETI
+
+EQUIP ${playerOneName} random
+EQUIP ${playerTwoName} random

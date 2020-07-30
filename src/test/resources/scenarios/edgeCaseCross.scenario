@@ -1,0 +1,21 @@
+{
+	"scenario": [
+        ["FREE","FREE","FREE","FREE","FREE","FREE","FREE","FREE"],
+		["WALL","WALL","WALL","WALL","WALL","WALL","WALL","WALL", "FREE"],
+        ["WALL","FREE","FREE","FREE","WALL","FREE","FREE","WALL", "FREE"],
+        ["WALL","FREE","FREE","FREE","WALL","FREE","FREE","WALL"],
+        ["WALL","FREE","FREE","FREE","WALL","FREE","FREE","WALL", "FREE"],
+        ["WALL","FREE","FREE","FREE","WALL","FREE","FREE","WALL", "FREE", "FREE", "FREE"],
+        ["WALL","FREE","FREE","FREE","WALL","FREE","FREE","WALL", "FREE", "FREE", "FREE"],
+        ["WALL","WALL","WALL","WALL","SAFE","WALL","WALL","WALL", "FREE", "FREE"],
+        ["WALL","FREE","FREE","SAFE","FREE","SAFE","FREE","WALL", "FREE", "FREE", "FREE", "FREE"],
+        ["WALL","WALL","WALL","WALL","SAFE","WALL","WALL","WALL", "FREE", "FREE"],
+        ["WALL","FREE","FREE","FREE","WALL","FREE","FREE","WALL", "FREE", "FREE", "FREE"],
+        ["WALL","FREE","FREE","FREE","WALL","FREE","FREE","WALL", "FREE", "FREE", "FREE"],
+        ["WALL","FREE","FREE","FREE","WALL","FREE","FREE","WALL", "FREE"],
+        ["WALL","FREE","FREE","FREE","WALL","FREE","FREE","WALL"],
+        ["WALL","FREE","FREE","FREE","WALL","FREE","FREE","WALL", "FREE"],
+        ["WALL","WALL","WALL","WALL","SAFE","WALL","WALL","WALL", "FREE"],
+        ["FREE","FREE","FREE","FREE","FREE","FREE","FREE","FREE"]
+	]
+}

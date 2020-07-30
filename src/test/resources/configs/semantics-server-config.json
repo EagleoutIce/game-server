@@ -1,0 +1,16 @@
+{
+    "allowDuplicateCharacters": false,
+    "minimumCharacters": 13,
+    "storyAuthorSleepThresholdMs": 17,
+    "timeoutDetectionTime": 9,
+    "unexpectedReconnect": false,
+    "performSemantics": true,
+    "minimumSplitsForTile": 3,
+    "numberOfNpc": 2,
+    "minimumSafeNeighbours": 1,
+    "allSafesConnected": true,
+    "sendMetaOnConnectionOpen": true,
+    "gadgetNpcMinimum": 0,
+    "gadgetNpcMaximum": 2,
+    "useIslandsForSpawn": true
+}

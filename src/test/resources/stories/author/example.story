@@ -1,0 +1,31 @@
+# This story was constructed by the StoryAuthor
+# ------------------------------------------------------
+# Filename: /tmp/Stories/server020-TEST-2020-04-16--02-55-08--2587498208728842530.story
+# Date: Thu Apr 16 14:55:08 CEST 2020
+# Server-Version: 1.0 (using Game-Data v1.1)
+# ------------------------------------------------------
+SET story-name server020
+SET story-date "Thu Apr 16 14:55:08 CEST 2020"
+FORBID_ERRORS
+# ------------------------------------------------------
+# Now the server will write config-injects to assure
+# deterministic behaviour.
+# ------------------------------------------------------
+CONFIG_INJECT next-proposal walter "Spröder Senf,The legendary Gustav,Meister Yoda,mothball_pouch,diamond_collar,bowler_blade"
+CONFIG_INJECT next-proposal jeff "Misses Y,Mister X,Ein Wischmob,hairdryer,gas_gloss,jetpack"
+# ------------------------------------------------------
+# This is default-configs part, which will set the used scenario, ...
+# ------------------------------------------------------
+CONFIG_INJECT scenario raw-json "{\"scenario\":[[\"WALL\",\"WALL\",\"WALL\",\"WALL\",\"WALL\",\"WALL\",\"WALL\"],[\"WALL\",\"FIREPLACE\",\"WALL\",\"BAR_TABLE\",\"BAR_SEAT\",\"FREE\",\"WALL\"],[\"WALL\",\"FREE\",\"FREE\",\"FREE\",\"FREE\",\"FREE\",\"WALL\"],[\"WALL\",\"BAR_TABLE\",\"FREE\",\"ROULETTE_TABLE\",\"FREE\",\"FREE\",\"WALL\"],[\"WALL\",\"BAR_SEAT\",\"FREE\",\"WALL\",\"FREE\",\"FREE\",\"WALL\"],[\"WALL\",\"FREE\",\"FREE\",\"FREE\",\"FREE\",\"SAFE\",\"WALL\"],[\"WALL\",\"WALL\",\"WALL\",\"WALL\",\"WALL\",\"WALL\",\"WALL\"]]}"
+CONFIG_INJECT matchconfig raw-json "{\"moledieRange\":1,\"bowlerBladeRange\":1,\"bowlerBladeHitChance\":0.25,\"bowlerBladeDamage\":4,\"laserCompactHitChance\":0.125,\"rocketPenDamage\":2,\"gasGlossDamage\":6,\"mothballPouchRange\":2,\"mothballPouchDamage\":1,\"fogTinRange\":2,\"grappleRange\":3,\"grappleHitChance\":0.35,\"wiretapWithEarplugsFailChance\":0.64,\"mirrorSwapChance\":0.35,\"cocktailDodgeChance\":0.25,\"cocktailHp\":6,\"spySuccessChance\":0.65,\"babysitterSuccessChance\":0.25,\"honeyTrapSuccessChance\":0.35,\"observationSuccessChance\":0.12,\"chipsToIpFactor\":12,\"roundLimit\":15,\"turnPhaseLimit\":6,\"catIp\":8,\"strikeMaximum\":4,\"pauseLimit\":320,\"reconnectLimit\":200}"
+CONFIG_INJECT characters raw-json "[{\"characterId\":\"699c3f30-403c-47b1-95f3-04fd6cae1c82\",\"name\":\"James Bond\",\"description\":\"Bester Geheimagent aller Zeiten mit 00-Status.\",\"gender\":\"DIVERSE\",\"features\":[\"SPRYNESS\",\"TOUGHNESS\",\"ROBUST_STOMACH\",\"LUCKY_DEVIL\",\"TRADECRAFT\"]},{\"characterId\":\"7a2fb7a2-fc49-4221-9827-29e63f608931\",\"name\":\"Meister Yoda\",\"description\":\"Yoda (* 896 VSY; † 4 NSY auf Dagobah) gehörte einer unbekannten Spezies an, war 66 cm groß und war am Ende seines Lebens 900 Jahre alt. Er hatte in über 800 Jahren als Jedi-(Groß-)Meister zahlreiche Schüler in der Macht ausgebildet, darunter u. a. Luke Skywalker und Count Dooku, und war ein Meister im Umgang mit dem Lichtschwert.\",\"gender\":null,\"features\":[\"LUCKY_DEVIL\",\"OBSERVATION\",\"TOUGHNESS\"]},{\"characterId\":\"9ea22670-0060-4c86-ae71-9522fb17d028\",\"name\":\"Tante Gertrude\",\"description\":\"Nach wie vor die beste Tante, die man sich wünschen kann.\",\"gender\":\"FEMALE\",\"features\":[\"NIMBLENESS\",\"BABYSITTER\",\"TOUGHNESS\"]},{\"characterId\":\"6513523a-c7ec-4f9f-82b2-9ad862a74be0\",\"name\":\"The legendary Gustav\",\"description\":\"Wer ihn wählt, cheated, so einfach ist das -- der hat einfach alles, dieser Gustav.\",\"gender\":null,\"features\":[\"AGILITY\",\"LUCKY_DEVIL\",\"BANG_AND_BURN\",\"TRADECRAFT\",\"OBSERVATION\"]},{\"characterId\":\"ed0c8cfc-5faa-4b19-8758-d336d4c56100\",\"name\":\"Hans Peter Otto\",\"description\":\"Auch Hans Otto, oder Otto-Normal genannt.\",\"gender\":\"MALE\",\"features\":[\"ROBUST_STOMACH\",\"FLAPS_AND_SEALS\"]},{\"characterId\":\"e8207059-163e-40de-b92b-42d83bd4bc6b\",\"name\":\"Ein Wischmob\",\"description\":\"Wieso sollte der nicht mitspielen dürfen?\",\"gender\":null,\"features\":[\"JINX\",\"SPRYNESS\",\"HONEY_TRAP\"]},{\"characterId\":\"287c20dc-d29b-4901-9ac6-7c8202f99a26\",\"name\":\"Zackiger Zacharias\",\"description\":\"Langsamer, als die Polizei erlaubt.\",\"gender\":\"DIVERSE\",\"features\":[\"PONDEROUSNESS\",\"ROBUST_STOMACH\"]},{\"characterId\":\"96a9be43-2b39-4aa3-9085-f743ccea09fc\",\"name\":\"Schleim B. Olzen\",\"description\":null,\"gender\":\"MALE\",\"features\":[\"LUCKY_DEVIL\",\"NIMBLENESS\",\"TRADECRAFT\"]},{\"characterId\":\"aaf45042-2d8c-4dab-b04e-9e3e01edddfb\",\"name\":\"Spröder Senf\",\"description\":\"Alle Macht dem Senf\",\"gender\":null,\"features\":[\"SPRYNESS\",\"CONSTANT_CLAMMY_CLOTHES\",\"OBSERVATION\"]},{\"characterId\":\"2ce9b703-f8c3-4cbb-ad7a-cd3d137bbd65\",\"name\":\"Petterson\",\"description\":\"Den Findus keiner.\",\"gender\":null,\"features\":[\"HONEY_TRAP\",\"BABYSITTER\",\"FLAPS_AND_SEALS\"]},{\"characterId\":\"05037e28-5f31-4a9d-9fd5-7b2148ea3b03\",\"name\":\"Mister X\",\"description\":\"Wohin könnte er nur gehen?\",\"gender\":\"MALE\",\"features\":[\"AGILITY\",\"LUCKY_DEVIL\"]},{\"characterId\":\"3cc62105-9cbf-45a5-8275-7c84e7be41e2\",\"name\":\"Mister Y\",\"description\":\"Leider als Einzelkind aufgewachsen. Sowas prägt.\",\"gender\":\"MALE\",\"features\":[\"LUCKY_DEVIL\"]},{\"characterId\":\"d6486217-34be-4cab-bf45-c08e6fc29f25\",\"name\":\"Misses Y\",\"description\":\"Ist eigentlich nur für die Gleichberechtigung hier.\",\"gender\":\"FEMALE\",\"features\":[\"OBSERVATION\",\"TOUGHNESS\"]},{\"characterId\":\"6f5994e4-66b8-44b9-a079-a993448f28d0\",\"name\":\"Austauschbarer Agent Dieter 42\",\"description\":\"Er war auf diesem Austauschseminar und hat sich seitdem so verändert.\",\"gender\":\"DIVERSE\",\"features\":[\"HONEY_TRAP\",\"LUCKY_DEVIL\"]},{\"characterId\":\"90031eb6-d499-46c4-ba6f-b9fe0c94e705\",\"name\":\"Saphira\",\"description\":\"Natürlich ist sie im Pool...\",\"gender\":\"FEMALE\",\"features\":[\"AGILITY\",\"LUCKY_DEVIL\",\"BANG_AND_BURN\",\"TOUGHNESS\"]}]"
+# ------------------------------------------------------
+# This is the main part
+# ------------------------------------------------------
+HELLO Petterson SPECTATOR
+HELLO walter AI
+HELLO jeff PLAYER
+META walter "Spectator.Count,Spectator.Names"
+META walter "Spectator.Count,Spectator.Names"
+
+# End of File

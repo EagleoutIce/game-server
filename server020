@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+OPTIND=1
+port="7007" # default for port
+all="$@"
+while [[ "$#" -gt 0 ]]; do
+    case $1 in
+        -p|--port) port="$2"; shift ;;
+    esac
+    shift
+done
+
+echo "[Script] Using docker: $(docker -v)"
+command="docker run --interactive --tty -p${port}:${port} --volume $(pwd):/home/server-user/data server020:latest ${all}"
+echo "[Script] Running command: '${command}'"
+${command}

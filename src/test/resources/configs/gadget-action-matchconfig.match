@@ -1,0 +1,47 @@
+{
+    "moledieRange": 4,
+
+    "bowlerBladeRange": 4,
+    "bowlerBladeHitChance": 1.0,
+    "bowlerBladeDamage": 4,
+
+    "laserCompactHitChance": 1.0,
+
+    "rocketPenDamage": 2,
+
+    "gasGlossDamage": 6,
+
+    "mothballPouchRange": 2,
+    "mothballPouchDamage": 10,
+
+    "fogTinRange": 4,
+
+    "grappleRange": 3,
+    "grappleHitChance": 0.35,
+
+    "wiretapWithEarplugsFailChance": 1.0,
+
+    "mirrorSwapChance": 1.0,
+
+    "cocktailDodgeChance": 0.0,
+    "cocktailHp": 6,
+
+    "spySuccessChance": 0.65,
+
+    "babysitterSuccessChance": 1.0,
+
+    "honeyTrapSuccessChance": 1.0,
+
+    "observationSuccessChance": 1.0,
+
+    "chipsToIpFactor": 12,
+    "secretToIpFactor": 3,
+    "minChipsRoulette": 0,
+    "maxChipsRoulette": 6,
+    "roundLimit": 3,
+    "turnPhaseLimit": 60,
+    "catIp": 8,
+    "strikeMaximum": 4,
+    "pauseLimit": 320,
+    "reconnectLimit": 200
+}

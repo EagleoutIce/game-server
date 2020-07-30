@@ -1,0 +1,16 @@
+# This story preset will perform the main game phase game, with retirements only
+
+# we will iterate all rounds + num of characters as start
+ADD ${matchconfig:roundLimit} ${#playerCharacters} totalRounds
+# There is one round to much, so we will reduce it by one
+# SUB ${totalRounds} 1 totalRounds
+# No necessary anymore, as this is guarded by the BREAK_EQ
+
+# Skip the basic rounds:
+ITER ${totalRounds}:
+  # For every character by player:
+  ITER ${#playerCharacters}:
+    BREAK_EQ ${gameOver} true
+    OPERATION random retire <none>
+  RETI
+RETI

@@ -1,0 +1,8 @@
+# Item Phase:
+ITER 8:
+  ITEM ${playerOneName} random
+  ITEM ${playerTwoName} random
+RETI
+
+EQUIP ${playerOneName} random
+EQUIP ${playerTwoName} random

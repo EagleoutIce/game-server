@@ -1,0 +1,17 @@
+{
+	"scenario": [
+		["WALL", "WALL",      "WALL", "WALL",           "WALL",     "WALL", "WALL","WALL"],
+		["WALL", "FIREPLACE", "WALL", "BAR_TABLE",      "BAR_SEAT", "FREE", "FREE","WALL", "WALL"],
+		["WALL", "SAFE",      "FREE", "FREE",           "FREE",     "FREE", "WALL","FREE", "WALL"],
+		["WALL", "BAR_TABLE", "FREE", "ROULETTE_TABLE", "FREE",     "FREE", "FREE","FREE", "WALL"],
+		["WALL", "BAR_SEAT",  "FREE", "WALL",           "FREE",     "FREE", "FREE","FREE", "WALL"],
+		["WALL", "FREE",      "FREE", "FREE",           "FREE",     "WALL", "FREE","FREE", "WALL"],
+		["WALL", "FREE",      "FREE", "FREE",           "FREE",     "FREE", "FREE","FREE", "WALL"],
+		["WALL", "FREE",      "FREE", "FREE",           "FREE",     "FREE", "FREE","FREE", "WALL"],
+		["WALL", "WALL",      "WALL", "FREE",           "WALL",     "WALL", "FREE","FREE", "WALL"],
+		["WALL", "FREE",      "FREE", "FREE",           "WALL",     "WALL", "FREE","FREE", "WALL"],
+		["WALL", "SAFE",      "WALL", "FREE",           "FREE",     "FREE", "FREE","SAFE", "WALL"],
+		["WALL", "FREE",      "WALL", "FREE",           "FREE",     "FREE", "FREE","WALL", "WALL"],
+		["WALL", "WALL",      "WALL", "WALL",           "WALL",     "WALL", "WALL","WALL"]
+	]
+}

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This one runs the client
+echo "[Script] Using docker: $(docker -v)"
+echo "[Script] Running client mode"
+command="docker run --net=host --interactive --tty --volume $(pwd):/home/server-user/data server020:latest --defaults --x client true $@"
+echo "[Script] Running command: '${command}'"
+${command}

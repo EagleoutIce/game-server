@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>de.uulm.team020</groupId>
+    <artifactId>game-server</artifactId>
+    <version>1.1</version>
+    <packaging>jar</packaging>
+
+    <name>game-server</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.4.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.4.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>5.4.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.uulm.team020</groupId>
+            <artifactId>game-data</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.30</version>
+        </dependency>
+        <dependency>
+            <groupId>org.java-websocket</groupId>
+            <artifactId>Java-WebSocket</artifactId>
+            <version>1.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.fusesource.jansi</groupId>
+            <artifactId>jansi</artifactId>
+            <version>1.18</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>game-server</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+            </testResource>
+            <testResource>
+                <directory>src/main/resources</directory>
+            </testResource>
+        </testResources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <properties>
+                        <configurationParameters>
+                            junit.jupiter.testinstance.lifecycle.default = per_class
+                            junit.jupiter.execution.parallel.enabled = true
+                            <!-- concurrent -->
+                            junit.jupiter.execution.parallel.mode.default = same_thread
+                        </configurationParameters>
+                    </properties>
+                    <trimStackTrace>false</trimStackTrace>
+                </configuration>
+                <version>2.22.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <source>11</source>
+                    <additionalJOption>-Xdoclint:all</additionalJOption>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <author>true</author>
+                            <doctitle>${project.name} ${project.version} API (including game-data)</doctitle>
+                            <windowtitle>${project.name} ${project.version}</windowtitle>
+                            <linksource>true</linksource>
+                            <nodeprecated>true</nodeprecated>
+                            <sourcepath>./src/main:../game-data/src/main</sourcepath>
+                            <tags>
+                                <tag>
+                                    <name>StoryMethod</name>
+                                    <placement>a</placement>
+                                    <head>Story-Method!</head>
+                                </tag>
+                            </tags>
+                            <groups>
+                                <group>
+                                    <title>Core Packages</title>
+                                    <packages>de.uulm.team020:de.uulm.team020.server.core*</packages>
+                                </group>
+                                <group>
+                                    <title>Game Packages</title>
+                                    <packages>de.uulm.team020.server.game*:de.uulm.team020.server.configuration*:de.uulm.team020.server.addons*</packages>
+                                </group>
+                                <group>
+                                    <title>Client Packages</title>
+                                    <packages>de.uulm.team020.server.client*</packages>
+                                </group>
+                                <group>
+                                    <title>Packages for Testing</title>
+                                    <packages>de.uulm.team020.server.core.dummies*</packages>
+                                </group>
+                                <group>
+                                    <title>Game-Data Packages</title>
+                                    <packages>de.uulm.team020.datatypes*:de.uulm.team020.helper*:de.uulm.team020.logging*:de.uulm.team020.networking*:de.uulm.team020.parser*:de.uulm.team020.validation*</packages>
+                                </group>
+                            </groups>
+                            <bottom>
+                                <![CDATA[
+                                    <script>
+                                    if (typeof useModuleDirectories !== 'undefined') {
+                                        useModuleDirectories = false;
+                                    }
+                                    </script>
+                                ]]>
+                            </bottom>
+                            <additionalJOption>--allow-script-in-comments</additionalJOption>
+                            <links>
+                                <link>https://commons.apache.org/proper/commons-cli/apidocs</link>
+                            </links>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <transformers>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                            <mainClass>de.uulm.team020.ServerMain</mainClass>
+                        </transformer>
+                    </transformers>
+                    <minimizeJar>false</minimizeJar>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>package-game-server-shaded</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,10 @@
+{
+	"scenario": [
+                ["FREE",  "FREE",       "WALL",      "FREE"],
+                ["WALL",  "WALL",       "FREE",      "WALL"],
+                ["WALL",  "WALL",       "BAR_SEAT",  "WALL"],
+                ["WALL",  "WALL",       "WALL",      "WALL"],
+                ["FREE",  "WALL",       "WALL",      "WALL"],
+                ["FREE",  "FIREPLACE",  "FREE",      "FREE"]
+	]
+}
