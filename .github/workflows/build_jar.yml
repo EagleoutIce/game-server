@@ -28,10 +28,6 @@ jobs:
         run: |
           make
 
-      - name: Build the server
-        run: |
-          make
-
       - name: Deploy jar
         run: mvn -B deploy
         env:
