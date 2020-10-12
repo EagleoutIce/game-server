@@ -33,5 +33,6 @@ jobs:
           make
 
       - name: Deploy jar
-        run: |
-          mvn deploy -Dregistry=https://maven.pkg.github.com/EagleoutIce -Dtoken=GH_TOKEN
+        run: mvn -B deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
