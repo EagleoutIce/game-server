@@ -5,7 +5,7 @@
 
     <groupId>de.uulm.team020</groupId>
     <artifactId>game-server</artifactId>
-    <version>1.1</version>
+    <version>1.1b</version>
     <packaging>jar</packaging>
 
     <name>game-server</name>
@@ -117,7 +117,7 @@
                             <windowtitle>${project.name} ${project.version}</windowtitle>
                             <linksource>true</linksource>
                             <nodeprecated>true</nodeprecated>
-                            <sourcepath>./src/main:../game-data/src/main</sourcepath>
+                            <sourcepath>./src/main:./ntts-game-data/src/main</sourcepath>
                             <tags>
                                 <tag>
                                     <name>StoryMethod</name>
