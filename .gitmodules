@@ -1,0 +1,3 @@
+[submodule "ntts-game-data"]
+	path = ntts-game-data
+	url = https://github.com/EagleoutIce/ntts-game-data
